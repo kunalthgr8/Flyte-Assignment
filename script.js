@@ -30,8 +30,17 @@ document.querySelector("form").addEventListener("submit", function (e) {
     return; // Prevent further execution
   }
 
+  var overallIncome = grossIncome + extraIncome - deductions;
+  if (overallIncome <= 800000) {
+    document.getElementById("overall-income").innerText =
+      "Total Income: " + overallIncome;
+    document.getElementById("form-div").style.display = "none";
+    document.getElementById("successDiv").style.display = "block";
+    return;
+  }
+
   // Calculate tax
-  if (grossIncome >= 800000) {
+  if (overallIncome >= 800000) {
     var taxRate;
     if (ageGroup === "<40") {
       taxRate = 0.3;
@@ -44,8 +53,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
     var taxAmount = taxRate * taxableIncome;
 
     document.getElementById("overall-income").innerText =
-      "Tax Amount: " + taxAmount.toFixed(2) + " Lakhs";
-    document.getElementById("form-div").style.display = 'none';
+      "Total Income: " + (800000 + (taxableIncome - taxAmount)) + " Lakhs";
+    document.getElementById("form-div").style.display = "none";
     document.getElementById("successDiv").style.display = "block";
   }
 });

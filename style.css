@@ -109,3 +109,38 @@ input[type="submit"]:hover {
 #close-button:hover {
   background-color: #5039a3; /* Change button hover color as needed */
 }
+
+
+@media (max-width: 857px) {
+  div {
+    width: 50%;
+  }
+  #gross-income-label{
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  div {
+    width: 60%;
+  }
+  #gross-income-label{
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 442px) {
+  div {
+    width: 60%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #gross-income-label{
+    margin-top: 50px;
+  }
+  label{
+    font-size: 15px;
+    margin-bottom: 7px;
+  }
+
+}
