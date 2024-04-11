@@ -15,21 +15,68 @@
     <title>Flyte-Assignment</title>
   </head>
   <body>
-    <div>
+    <div id="form-div">
       <form>
-        <label for="name" id="gross-income-label" 
-          >Enter gross annual income 
-          <span class="material-symbols-outlined" title="Gross Annual income is your total salary in a year before any deductions"> help </span></label
+        <label for="name" id="gross-income-label"
+          >Enter gross annual income
+          <span
+            class="material-symbols-outlined error-icon"
+            id="gross-income-error"
+          >
+            help
+          </span></label
         >
-        <input type="number" id="gross-income" name="gross" /><br /><br />
-        <label for="name">Enter extra income <span class="material-symbols-outlined" title="hello"> help </span></label>
-        <input type="number" id="extra-income" name="extra" /><br /><br />
-        <label for="name">Enter age group <span class="material-symbols-outlined" title="hello"> help </span></label>
-        <input type="number" id="age-group" name="age" /><br /><br />
-        <label for="name">Enter total applicable deductions <span class="material-symbols-outlined" title="hello"> help </span></label>
-        <input type="number" id="deductions" name="deduct" /><br /><br />
+        <input type="number" id="gross-income" name="gross" />
+        <br /><br />
+
+        <label for="name"
+          >Enter extra income
+          <span
+            class="material-symbols-outlined error-icon"
+            id="gross-income-error"
+          >
+            help
+          </span></label
+        >
+        <input type="number" id="extra-income" name="extra" />
+        <br /><br />
+
+        <label for="name"
+          >Enter age group
+          <span
+            class="material-symbols-outlined error-icon"
+            id="gross-income-error"
+          >
+            help
+          </span></label
+        >
+        <select id="age-group" required>
+          <option value="<40">less than 40</option>
+          <option value=">=40&<60">40 and less than 60</option>
+          <option value=">=60">60 and above</option>
+        </select>
+        <br /><br />
+
+        <label for="name"
+          >Enter total applicable deductions
+          <span
+            class="material-symbols-outlined error-icon"
+            id="gross-income-error"
+          >
+            help
+          </span></label
+        >
+        <input type="number" id="deductions" name="deduct" />
+        <br /><br />
+
         <input type="submit" value="Submit" id="submit" />
       </form>
+    </div>
+    <div id="successDiv" style="display: none">
+      <h1>Your overall income will be</h1>
+      <h2 id="overall-income"></h2>
+      <p>After tax deductions</p>
+      <button id="close-button" onclick="closeDiv()">Close</button>
     </div>
   </body>
   <script src="script.js"></script>
